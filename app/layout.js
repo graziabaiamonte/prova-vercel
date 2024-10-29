@@ -73,57 +73,57 @@ export default  function RootLayout({ children }) {
   }, [pathname]);
 
 
-  useEffect(() => {
-    // Codice per Google Tag Manager
-    const gtmScript = document.createElement('script');
-    gtmScript.innerHTML = `
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-K34D6HK');
-    `;
-    document.head.appendChild(gtmScript);
+  // useEffect(() => {
+  //   // Codice per Google Tag Manager
+  //   const gtmScript = document.createElement('script');
+  //   gtmScript.innerHTML = `
+  //     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  //     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  //     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  //     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  //     })(window,document,'script','dataLayer','GTM-K34D6HK');
+  //   `;
+  //   document.head.appendChild(gtmScript);
 
-    const gtmNoscript = document.createElement('noscript');
-    gtmNoscript.innerHTML = `
-      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K34D6HK"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    `;
-    document.body.appendChild(gtmNoscript);
+  //   const gtmNoscript = document.createElement('noscript');
+  //   gtmNoscript.innerHTML = `
+  //     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K34D6HK"
+  //     height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  //   `;
+  //   document.body.appendChild(gtmNoscript);
 
-    // Codice per Meta Pixel
-    const metaPixelScript = document.createElement('script');
-    metaPixelScript.innerHTML = `
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '1144814506507966');
-      fbq('track', 'PageView');
-    `;
-    document.head.appendChild(metaPixelScript);
+  //   // Codice per Meta Pixel
+  //   const metaPixelScript = document.createElement('script');
+  //   metaPixelScript.innerHTML = `
+  //     !function(f,b,e,v,n,t,s)
+  //     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  //     n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  //     if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  //     n.queue=[];t=b.createElement(e);t.async=!0;
+  //     t.src=v;s=b.getElementsByTagName(e)[0];
+  //     s.parentNode.insertBefore(t,s)}(window, document,'script',
+  //     'https://connect.facebook.net/en_US/fbevents.js');
+  //     fbq('init', '1144814506507966');
+  //     fbq('track', 'PageView');
+  //   `;
+  //   document.head.appendChild(metaPixelScript);
 
-    const metaPixelNoscript = document.createElement('noscript');
-    metaPixelNoscript.innerHTML = `
-      <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1144814506507966&ev=PageView&noscript=1"
-      />
-    `;
-    document.body.appendChild(metaPixelNoscript);
+  //   const metaPixelNoscript = document.createElement('noscript');
+  //   metaPixelNoscript.innerHTML = `
+  //     <img height="1" width="1" style="display:none"
+  //     src="https://www.facebook.com/tr?id=1144814506507966&ev=PageView&noscript=1"
+  //     />
+  //   `;
+  //   document.body.appendChild(metaPixelNoscript);
 
-    // Cleanup: rimuovi gli elementi quando il componente viene disattivato
-    return () => {
-      document.head.removeChild(gtmScript);
-      document.body.removeChild(gtmNoscript);
-      document.head.removeChild(metaPixelScript);
-      document.body.removeChild(metaPixelNoscript);
-    };
-  }, []);
+  //   // Cleanup: rimuovi gli elementi quando il componente viene disattivato
+  //   return () => {
+  //     document.head.removeChild(gtmScript);
+  //     document.body.removeChild(gtmNoscript);
+  //     document.head.removeChild(metaPixelScript);
+  //     document.body.removeChild(metaPixelNoscript);
+  //   };
+  // }, []);
 
 
   return (
