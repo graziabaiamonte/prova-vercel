@@ -1,3 +1,14 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "plugins": [
+    "import" // Aggiungi il plugin import
+  ],
+  "rules": {
+    "no-unused-vars": "warn", // Avvisa su variabili non utilizzate
+    "no-unused-expressions": "warn", // Avvisa su espressioni inutilizzate
+    "no-empty-function": "warn", // Avvisa su funzioni vuote
+    "import/named": "error", // Controlla le importazioni non utilizzate
+    "import/default": "error", // Controlla se ci sono importazioni di default non utilizzate
+    "import/namespace": "error" // Controlla importazioni di namespace non utilizzate
+  }
 }

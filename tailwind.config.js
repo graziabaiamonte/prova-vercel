@@ -7,9 +7,18 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        ricetteHero: "url('/img/ricetta_peperone.webp')",
+        sanCusumanoHero: "url('/imgSanCusumano/familyPattern.webp')",
+      },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        yellowLight: "#f8efd3",
+        yellowLightOpac: "rgba(248, 239, 211, 0.8)",
+        yellowDark: "#F5C23C",
+        red: "#DD332D",
+        black: "#000000",
+        bolliniPaginazione: "rgba(0, 0, 0, 0.1)",
+        trasparent: "#00000000",
       },
     },
   },

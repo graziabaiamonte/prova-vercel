@@ -2,20 +2,272 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+.imgBackground{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.imgBackgroundPiccola{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.scroll-section {
+  height:100vh;
+  width: 100vw;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  
+} 
+
+.loader {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  position: relative;
+}
+.loader::after,
+.loader::before {
+  content: '';  
+  box-sizing: border-box;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #F5C23C;
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: animloader 2s linear infinite;
+}
+.loader::after {
+  animation-delay: 1s;
+}
+
+@keyframes animloader {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
   }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
+
+.fontPrimary{
+font-weight: 1000;
+font-style: normal;
+}
+
+.text{
+  font-weight:400;
+}
+
+.textFontLight{
+  font-weight: 200;
+}
+
+
+.textLight {
+  color: rgba(79, 61, 34, 0.81);
+}
+
+.fontSecondary{
+  font-family: "Nanum Myeongjo", system-ui;
+  font-weight: 500;
+}
+
+.fontHeader{
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.imgBackground {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+    width: 100%; 
+    height: 100vh;
+  }
+
+
+  /* nella sezione 'sapevi che' */
+  .imgBackgroundNotHero {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+    width: 100%; 
+    height: 120vh;
+  }
+
+
+
+/* slider home */
+
+.swiper {
+ position: relative;
+}
+
+.swiper-button-next {
+  color: white !important;
+  left: 20%;
+}
+
+.swiper-button-prev{
+  color: white !important;
+}
+
+.swiper-slide {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: visible;
+}
+
+.testoSliderHome{
+font-style: normal;
+font-weight: 300;
+}
+
+.textTroncate{
+  max-width: 40ch;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+}
+
+
+
+/* stato attivo per pulsanti stagioni */
+
+.bg-active{ 
+  color: #F5C23C;
+  font-weight: 900;
+}
+
+
+/* Decoro titoli  pagina 'CHI SIAMO'   */
+.title-with-bar {
+  position: relative;
+}
+
+/* box titoli destri */
+.barRight {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 0; 
+  background-color: #F5C23C 
+}
+
+/* box titoli sinistri */
+.barLeft {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 4px;
+  width: 0; 
+  background-color: #F5C23C 
+}
+
+
+
+/* PULSANTI SVG */
+
+.rect {
+  fill: #F5C23C; 
+  transition: fill 0.4s ease;
+}
+
+/* Pulsante hover */
+.rect:hover{
+   fill: #DD332D ; 
+} 
+
+.rect:hover text {
+  fill: #f8efd3; 
+}
+
+
+/* pulsanti svg home */
+
+.rectHome {
+  fill: #F5C23C; 
+  transition: all 0.4s ease;
+}
+
+.textSvg {
+  transition: all 0.4s ease-in-out;
+}
+
+.textSvg:hover {
+  fill: #DD332D !important;
+}
+
+.rectHome:hover + a text {
+  fill: #DD332D;
+}
+
+
+/* pulsanti sulla mappa da nascondere */
+.gmnoprint {
+  display: none;
+}
+
+a[title="Visualizza questa zona in Google Maps (in una nuova finestra)"] {
+  display: none !important;
+}
+
+
+/* overlay per le card ricette */
+#cardOverlay{
+  position: relative;
+}
+
+#cardOverlay::before {
+  content: "SCOPRI DI PIU'"; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Sfondo scuro semi-trasparente */
+  color: white;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 600;
+  opacity: 0;
+  z-index: 1000000;
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* Evita che l'overlay blocchi le interazioni */
+}
+
+/* Quando si passa sopra la card, l'overlay diventa visibile */
+#cardOverlay:hover::before {
+  opacity: 1;
+}
+
+
