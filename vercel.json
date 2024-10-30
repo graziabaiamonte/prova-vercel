@@ -2,7 +2,7 @@
     "rewrites": [
       {
         "source": "/wp/(.*)",
-        "destination": "https://www.siciliagrazia.it/wp/$1"
+        "destination": "http://89.46.109.49/wp/$1"
       }
     ]
   }
