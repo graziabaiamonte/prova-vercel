@@ -56,7 +56,7 @@ export default function Contatti() {
                     {/* mappa */}
                     <div className="  w-full  flex-col justify-center items-center ">
                         <div  className="w-[100%] flex items-center map-container" >
-                            <APIProvider apiKey={"AIzaSyCFVOoVLY-mchBfwvpVcfiu8EZzCAFeVlc"}>
+                            {/* <APIProvider apiKey={"AIzaSyCFVOoVLY-mchBfwvpVcfiu8EZzCAFeVlc"}>
                                 <Map
                                 style={{width: '100vw', height: '45vh'}}
                                 center={ {  lat: 38.323860, lng: 14.200} }
@@ -74,7 +74,7 @@ export default function Contatti() {
                                 >
                                 <PoiMarkers pois={location} />
                                 </Map>
-                            </APIProvider>
+                            </APIProvider> */}
                         </div>
                     </div>
                 </div>
@@ -87,7 +87,7 @@ export default function Contatti() {
                      {/* mappa google per portatili */}
                      <div className="hidden lg:flex 2xl:hidden w-[75%]  flex-col justify-center items-center ">
                         <div  className="w-[100%] flex items-center map-container" >
-                            <APIProvider apiKey={"AIzaSyCFVOoVLY-mchBfwvpVcfiu8EZzCAFeVlc"}>
+                            {/* <APIProvider apiKey={"AIzaSyCFVOoVLY-mchBfwvpVcfiu8EZzCAFeVlc"}>
                                 <Map
                                 style={{width: '100vw', height: '170vh'}}
                                 center={ {  lat: 39.043860, lng: 14.543596} }
@@ -105,7 +105,7 @@ export default function Contatti() {
                                 >
                                 <PoiMarkers pois={location} />
                                 </Map>
-                            </APIProvider>
+                            </APIProvider> */}
                         </div>
                     </div>
                     
@@ -113,7 +113,7 @@ export default function Contatti() {
                     {/* mappa google  per schermi large*/}
                     <div className="hidden 2xl:flex w-[60%]  flex-col justify-center items-center ">
                         <div  className="w-[100%] flex items-center map-container" >
-                            <APIProvider apiKey={"AIzaSyCFVOoVLY-mchBfwvpVcfiu8EZzCAFeVlc"}>
+                            {/* <APIProvider apiKey={"AIzaSyCFVOoVLY-mchBfwvpVcfiu8EZzCAFeVlc"}>
                                 <Map
                                 style={{width: '100vw', height: '120vh'}}
                                 center={ {  lat: 39.043860, lng: 14.543596} }
@@ -131,7 +131,7 @@ export default function Contatti() {
                                 >
                                 <PoiMarkers pois={location} />
                                 </Map>
-                            </APIProvider>
+                            </APIProvider> */}
                         </div>
                     </div>
 
@@ -181,16 +181,16 @@ export default function Contatti() {
     )
 }
 
-const PoiMarkers = (props) => {
-    return (
-      <>
-        {props.pois.map( (poi) => (
-          <AdvancedMarker
-            key={poi.key}
-            position={poi.location}>
-          <Pin background={'#DD332D'} glyphColor={'#f8efd3'} borderColor={'trasparent'} />
-          </AdvancedMarker>
-        ))}
-      </>
-    );
-  };
+// const PoiMarkers = (props) => {
+//     return (
+//       <>
+//         {props.pois.map( (poi) => (
+//           <AdvancedMarker
+//             key={poi.key}
+//             position={poi.location}>
+//           <Pin background={'#DD332D'} glyphColor={'#f8efd3'} borderColor={'trasparent'} />
+//           </AdvancedMarker>
+//         ))}
+//       </>
+//     );
+//   };
