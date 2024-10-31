@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 
-
 const nextConfig = {
     basePath: '',
     trailingSlash: true,
@@ -14,6 +13,20 @@ const nextConfig = {
                 pathname: "/wp/wp-content/uploads/**",
             },
         ],
+    },
+    async redirects() {
+        return [
+            {
+                source: '/wp/:path*', // Mantiene le richieste per la cartella wp
+                destination: '/wp/:path*', // Non modifica la richiesta
+                permanent: false, // Cambia a true per un redirect permanente
+            },
+            {
+                source: '/:path*', // Cattura tutte le altre richieste
+                destination: 'https://tuo-dominio-aruba.it/:path*', // Reindirizza al tuo dominio di Aruba
+                permanent: false, // Cambia a true per un redirect permanente
+            },
+        ];
     },
 };
 
