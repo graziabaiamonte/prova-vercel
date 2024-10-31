@@ -1,9 +1,0 @@
-
-{
-  "rewrites": [
-    {
-      "source": "/wp/(.*)",
-      "destination": "https://siciliagrazia.it/wp/$1"
-    }
-  ]
-}
