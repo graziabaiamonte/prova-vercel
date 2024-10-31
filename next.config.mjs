@@ -23,7 +23,7 @@ const nextConfig = {
             },
             {
                 source: '/:path*', // Cattura tutte le altre richieste
-                destination: 'https://tuo-dominio-aruba.it/:path*', // Reindirizza al tuo dominio di Aruba
+                destination: 'https://www.siciliagrazia.it/:path*', // Reindirizza al tuo dominio di Aruba
                 permanent: false, // Cambia a true per un redirect permanente
             },
         ];
