@@ -9,6 +9,7 @@ import Header from "./components/Header";
 import Lenis from "lenis";
 import Head from "next/head";
 import Script from "next/script";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 // import { GoogleAnalytics } from '@next/third-parties/google'
 
@@ -136,7 +137,7 @@ export default  function RootLayout({ children }) {
         <Header />
         {children}
        {showFooterGiallo ? <FooterGiallo/> : <Footer/>}
-       
+  
           {/* Facebook Meta Pixel */}
           {/* <Script id="facebook-pixel" strategy="afterInteractive">
             {`
